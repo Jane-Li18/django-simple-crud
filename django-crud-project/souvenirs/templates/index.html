@@ -1,0 +1,32 @@
+{% extends "master.html" %}
+
+{% block title %}
+    Retrieve Records
+{% endblock %}
+
+{% block content %}
+<div class="centered-form">
+    <form method="POST" action="/reg">
+        {% csrf_token %}
+        <div>
+            <br>
+            <p>
+                <h3>Enter Details</h3>
+            </p>
+            <div>
+                <p>Name</p>{{ form.booking_name }}
+            </div>
+            <div>
+                <p>Email</p>{{ form.booking_email }}
+            </div>
+            <div>
+                <p>Contact No.</p>{{ form.booking_contact }}
+            </div>
+            <div>
+                <br>
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

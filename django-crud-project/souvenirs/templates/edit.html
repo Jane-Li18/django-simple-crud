@@ -1,0 +1,47 @@
+{% extends "master.html" %}
+
+{% block title %}
+    Update Records
+{% endblock %}
+
+{% block content %}
+    <div class="centered-form">
+        <form method="POST" action="/update/{{ bookingrecords.booking_id }}">
+            {% csrf_token %}
+            <div>
+                <br>
+                <p>
+                    <h3>Update Details</h3>
+                </p>
+            </div>
+            <div>
+                <p>ID</p>
+                <div>
+                    <input type="text" name="booking_id" value="{{bookingrecords.booking_id}}" readonly/>
+                </div>
+            </div>
+            <div>
+                <p>Name</p>
+                <div>
+                    <input type="text" name="booking_name" value="{{bookingrecords.booking_name}}" />
+                </div>
+            </div>
+            <div>
+                <p>Email</p>
+                <div>
+                    <input type="email" name="booking_email" value="{{bookingrecords.booking_email}}" />
+                </div>
+            </div>
+            <div>
+                <p>Contact No.</p>
+                <div>
+                    <input type="text" name="booking_contact" value="{{bookingrecords.booking_contact}}" />
+                </div>
+            </div>
+            <div>
+                <br>
+                <button type="submit" class="btn btn-outline-primary">Update</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
